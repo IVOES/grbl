@@ -1,0 +1,134 @@
+grbl/coolant_control.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 34 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/eeprom.c:141:17: style: The scope of the variable 'data' can be reduced. [variableScope]
+  unsigned char data, checksum = 0;
+                ^
+grbl/gcode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 35 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/jog.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/limits.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 36 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/main.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 33 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/motion_control.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 36 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/nuts_bolts.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/planner.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 32 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/planner.c:287:17: style: The scope of the variable 'block' can be reduced. [variableScope]
+  plan_block_t *block;
+                ^
+grbl/planner.c:288:9: style: The scope of the variable 'nominal_speed' can be reduced. [variableScope]
+  float nominal_speed;
+        ^
+grbl/print.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/probe.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 32 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/protocol.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 37 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/report.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 51 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/serial.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 32 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/serial.c:98:19: warning: Either the condition 'next_head==(104+1)' is redundant or the array 'serial_tx_buffer[105]' is accessed at index 105, which is out of bounds. [arrayIndexOutOfBoundsCond]
+  serial_tx_buffer[serial_tx_buffer_head] = data;
+                  ^
+grbl/serial.c:89:17: note: Assuming that condition 'next_head==(104+1)' is not redundant
+  if (next_head == TX_RING_BUFFER) { next_head = 0; }
+                ^
+grbl/serial.c:88:45: note: Assignment to 'next_head=serial_tx_buffer_head+1'
+  uint8_t next_head = serial_tx_buffer_head + 1;
+                                            ^
+grbl/serial.c:98:19: note: Array index out of bounds
+  serial_tx_buffer[serial_tx_buffer_head] = data;
+                  ^
+grbl/settings.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 34 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/settings.c:90:39: portability:inconclusive: Casting from float * to signed char * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  memcpy_to_eeprom_with_checksum(addr,(char*)coord_data, sizeof(float)*N_AXIS);
+                                      ^
+grbl/settings.c:166:42: portability:inconclusive: Casting from float * to signed char * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  if (!(memcpy_from_eeprom_with_checksum((char*)coord_data, addr, sizeof(float)*N_AXIS))) {
+                                         ^
+grbl/settings.c:317:35: style:inconclusive: Function 'get_step_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'. [funcArgNamesDifferent]
+uint8_t get_step_pin_mask(uint8_t axis_idx)
+                                  ^
+grbl/settings.h:144:35: note: Function 'get_step_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'.
+uint8_t get_step_pin_mask(uint8_t i);
+                                  ^
+grbl/settings.c:317:35: note: Function 'get_step_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'.
+uint8_t get_step_pin_mask(uint8_t axis_idx)
+                                  ^
+grbl/settings.c:326:40: style:inconclusive: Function 'get_direction_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'. [funcArgNamesDifferent]
+uint8_t get_direction_pin_mask(uint8_t axis_idx)
+                                       ^
+grbl/settings.h:147:40: note: Function 'get_direction_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'.
+uint8_t get_direction_pin_mask(uint8_t i);
+                                       ^
+grbl/settings.c:326:40: note: Function 'get_direction_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'.
+uint8_t get_direction_pin_mask(uint8_t axis_idx)
+                                       ^
+grbl/settings.c:335:36: style:inconclusive: Function 'get_limit_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'. [funcArgNamesDifferent]
+uint8_t get_limit_pin_mask(uint8_t axis_idx)
+                                   ^
+grbl/settings.h:150:36: note: Function 'get_limit_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'.
+uint8_t get_limit_pin_mask(uint8_t i);
+                                   ^
+grbl/settings.c:335:36: note: Function 'get_limit_pin_mask' argument 1 names different: declaration 'i' definition 'axis_idx'.
+uint8_t get_limit_pin_mask(uint8_t axis_idx)
+                                   ^
+grbl/spindle_control.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 41 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/stepper.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 35 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/system.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 40 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+grbl/system.c:163:46: style: Condition 'system_check_safety_door_ajar()' is always false [knownConditionTrueFalse]
+            if (system_check_safety_door_ajar()) { return(STATUS_CHECK_DOOR); }
+                                             ^
+grbl/system.c:181:44: style: Condition 'system_check_safety_door_ajar()' is always false [knownConditionTrueFalse]
+          if (system_check_safety_door_ajar()) { return(STATUS_CHECK_DOOR); } // Block if safety door is ajar.
+                                           ^
+grbl/nuts_bolts.c:140:0: style: The function 'delay_us' is never used. [unusedFunction]
+
+^
+grbl/planner.c:507:0: style: The function 'plan_get_block_buffer_count' is never used. [unusedFunction]
+
+^
+grbl/print.c:117:0: style: The function 'printInteger' is never used. [unusedFunction]
+
+^
+grbl/print.c:83:0: style: The function 'print_uint8_base2_ndigit' is never used. [unusedFunction]
+
+^
+grbl/report.c:454:0: style: The function 'report_echo_line_received' is never used. [unusedFunction]
+
+^
+grbl/serial.c:47:0: style: The function 'serial_get_rx_buffer_count' is never used. [unusedFunction]
+
+^
+grbl/serial.c:57:0: style: The function 'serial_get_tx_buffer_count' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
